@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'anymail',
     'emails',
 ]
 
@@ -89,9 +88,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
-
-ANYMAIL = {
-    'MAILGUN_API_KEY': env_vars.get('MAILGUN_API_KEY'),
-    'MAILGUN_SERVER_NAME': env_vars.get('MAILGUN_SERVER_NAME'),
-}
+# Mailgun API configuration
+MAILGUN_API_KEY = env_vars.get('MAILGUN_API_KEY')
+MAILGUN_SERVER_NAME = env_vars.get('MAILGUN_SERVER_NAME')
+MAILGUN_API_URL = f"https://api.mailgun.net/v3/{MAILGUN_SERVER_NAME}/messages"
