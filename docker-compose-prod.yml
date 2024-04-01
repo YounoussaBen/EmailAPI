@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "7000:7000"
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=emailapi.settings.prod
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: your_db_name
+      POSTGRES_USER: your_db_user
+      POSTGRES_PASSWORD: your_db_password
