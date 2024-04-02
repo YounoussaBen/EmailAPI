@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Summary Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sales Summary Report</h1>
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Net Sales</td>
+            <td>{{ net_sales }}</td>
+        </tr>
+        <tr>
+            <td>Gross Sales</td>
+            <td>{{ gross_sales }}</td>
+        </tr>
+        <tr>
+            <td>Total Product Sales</td>
+            <td>{{ total_product_sales }}</td>
+        </tr>
+        <tr>
+            <td>Taxable Sales</td>
+            <td>{{ taxable_sales }}</td>
+        </tr>
+        <tr>
+            <td>Non-Taxable Sales</td>
+            <td>{{ non_taxable_sales }}</td>
+        </tr>
+        <tr>
+            <td>CRV Charges</td>
+            <td>{{ crv_charges }}</td>
+        </tr>
+        <tr>
+            <td>Total Service Fees</td>
+            <td>{{ total_service_fees }}</td>
+        </tr>
+        <tr>
+            <td>Taxable Service Fee</td>
+            <td>{{ taxable_service_fee }}</td>
+        </tr>
+        <tr>
+            <td>Non-Taxable Service Fees</td>
+            <td>{{ non_taxable_service_fees }}</td>
+        </tr>
+        <tr>
+            <td>Shipping and Handling</td>
+            <td>{{ shipping_and_handling }}</td>
+        </tr>
+        <tr>
+            <td>Total Discounts</td>
+            <td>{{ total_discounts }}</td>
+        </tr>
+        <tr>
+            <td>Item Discounts</td>
+            <td>{{ item_discounts }}</td>
+        </tr>
+        <tr>
+            <td>Order Discounts</td>
+            <td>{{ order_discounts }}</td>
+        </tr>
+        <tr>
+            <td>Total Tax and Surcharges</td>
+            <td>{{ total_tax_and_surcharges }}</td>
+        </tr>
+        <tr>
+            <td>Sales Tax</td>
+            <td>{{ sales_tax }}</td>
+        </tr>
+        <tr>
+            <td>Prevailing Tax</td>
+            <td>{{ prevailing_tax }}</td>
+        </tr>
+        <tr>
+            <td>Tax Rounding Variance</td>
+            <td>{{ tax_rounding_variance }}</td>
+        </tr>
+        <tr>
+            <td>Pass Through Fee Tax</td>
+            <td>{{ pass_through_fee_tax }}</td>
+        </tr>
+        <tr>
+            <td>Surcharges</td>
+            <td>{{ surcharges }}</td>
+        </tr>
+        <tr>
+            <td>CRV Charges Liabilities</td>
+            <td>{{ crv_charges_liabilities }}</td>
+        </tr>
+        <tr>
+            <td>House Account</td>
+            <td>{{ house_account }}</td>
+        </tr>
+        <tr>
+            <td>Payments against House Account</td>
+            <td>{{ payments_against_house_account }}</td>
+        </tr>
+        <tr>
+            <td>Payments with House Account</td>
+            <td>{{ payments_with_house_account }}</td>
+        </tr>
+        <tr>
+            <td>Gift Cards</td>
+            <td>{{ gift_cards }}</td>
+        </tr>
+        <tr>
+            <td>Sold Value</td>
+            <td>{{ sold_value }}</td>
+        </tr>
+        <tr>
+            <td>Redeemed Value</td>
+            <td>{{ redeemed_value }}</td>
+        </tr>
+        <tr>
+            <td>Store Credit Accrued</td>
+            <td>{{ store_credit_accrued }}</td>
+        </tr>
+        <tr>
+            <td>Store Credit Redeemed</td>
+            <td>{{ store_credit_redeemed }}</td>
+        </tr>
+        <tr>
+            <td>Deposits</td>
+            <td>{{ deposits }}</td>
+        </tr>
+        <tr>
+            <td>Deposit Payments</td>
+            <td>{{ deposit_payments }}</td>
+        </tr>
+        <tr>
+            <td>Applied Deposits</td>
+            <td>{{ applied_deposits }}</td>
+        </tr>
+    </table>
+</body>
+</html>
