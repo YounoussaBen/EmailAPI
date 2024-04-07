@@ -32,3 +32,5 @@ venv/
 # System files
 .DS_Store
 Thumbs.db
+
+/firestore/
