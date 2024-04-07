@@ -78,6 +78,9 @@ AUTH_PASSWORD_VALIDATORS = [
     # ... password validator configuration
 ]
 
+# Pass Firestore path from environment variables
+FIRESTORE_PATH = env_vars.get('FIRESTORE_PATH')
+
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
@@ -86,6 +89,15 @@ USE_TZ = True
 
 # Static files (placeholder for static URL)
 STATIC_URL = '/static/'
+
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,  # Set to True if you're using session authentication
+    'SECURITY_DEFINITIONS': {
+        'basic': {
+            'type': 'basic'
+        }
+    },
+}
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
