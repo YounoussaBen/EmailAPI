@@ -1,7 +1,12 @@
-# urls.py
-from django.urls import path
-from .views import SalesSummaryAPIView
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import SalesSummaryViewSet
 
+# Create a router and register our viewset with it
+router = DefaultRouter()
+router.register(r'sales-summary', SalesSummaryViewSet, basename='sales-summary')
+
+# The API URLs are now determined automatically by the router
 urlpatterns = [
-    path('sales-summary/', SalesSummaryAPIView.as_view(), name='sales-summary'),
+    path('', include(router.urls)),
 ]
