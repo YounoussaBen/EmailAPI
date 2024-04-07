@@ -1,9 +1,38 @@
 # serializers.py
 from rest_framework import serializers
-from .models import SalesSummary
 
-class SalesSummarySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SalesSummary
-        fields = '__all__'
-        extra_kwargs = {field: {'required': False} for field in fields}
+class SalesSummarySerializer(serializers.Serializer):
+    id = serializers.CharField(max_length=200, read_only=True)
+    net_sales = serializers.DecimalField(max_digits=10, decimal_places=2)
+    gross_sales = serializers.DecimalField(max_digits=10, decimal_places=2)
+    total_product_sales = serializers.DecimalField(max_digits=10, decimal_places=2)
+    taxable_sales = serializers.DecimalField(max_digits=10, decimal_places=2)
+    non_taxable_sales = serializers.DecimalField(max_digits=10, decimal_places=2)
+    crv_charges = serializers.DecimalField(max_digits=10, decimal_places=2)
+    total_service_fees = serializers.DecimalField(max_digits=10, decimal_places=2)
+    taxable_service_fee = serializers.DecimalField(max_digits=10, decimal_places=2)
+    non_taxable_service_fees = serializers.DecimalField(max_digits=10, decimal_places=2)
+    shipping_and_handling = serializers.DecimalField(max_digits=10, decimal_places=2)
+    total_discounts = serializers.DecimalField(max_digits=10, decimal_places=2)
+    item_discounts = serializers.DecimalField(max_digits=10, decimal_places=2)
+    order_discounts = serializers.DecimalField(max_digits=10, decimal_places=2)
+    total_tax_and_surcharges = serializers.DecimalField(max_digits=10, decimal_places=2)
+    sales_tax = serializers.DecimalField(max_digits=10, decimal_places=2)
+    prevailing_tax = serializers.DecimalField(max_digits=10, decimal_places=2)
+    tax_rounding_variance = serializers.DecimalField(max_digits=10, decimal_places=2)
+    pass_through_fee_tax = serializers.DecimalField(max_digits=10, decimal_places=2)
+    surcharges = serializers.DecimalField(max_digits=10, decimal_places=2)
+    crv_charges_liabilities = serializers.DecimalField(max_digits=10, decimal_places=2)
+    house_account = serializers.DecimalField(max_digits=10, decimal_places=2)
+    payments_against_house_account = serializers.DecimalField(max_digits=10, decimal_places=2)
+    payments_with_house_account = serializers.DecimalField(max_digits=10, decimal_places=2)
+    gift_cards = serializers.DecimalField(max_digits=10, decimal_places=2)
+    sold_value = serializers.DecimalField(max_digits=10, decimal_places=2)
+    redeemed_value = serializers.DecimalField(max_digits=10, decimal_places=2)
+    store_credit_accrued = serializers.DecimalField(max_digits=10, decimal_places=2)
+    store_credit_redeemed = serializers.DecimalField(max_digits=10, decimal_places=2)
+    deposits = serializers.DecimalField(max_digits=10, decimal_places=2)
+    deposit_payments = serializers.DecimalField(max_digits=10, decimal_places=2)
+    applied_deposits = serializers.DecimalField(max_digits=10, decimal_places=2)
+    created_at = serializers.DateTimeField(read_only=True)
+    updated_at = serializers.DateTimeField(read_only=True)
